@@ -36,7 +36,7 @@ namespace :test do
   desc "Run *all* the tests. Tea time."
   task :complete do
     Rake::Task['test:quick'].invoke
-    Rake::Task['test:kitchen:all'].invoke
+    # Rake::Task['test:kitchen:all'].invoke # Not a recipe cookbook
   end
 
   desc "Run CI tests"

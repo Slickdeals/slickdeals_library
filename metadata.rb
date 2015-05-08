@@ -5,4 +5,3 @@ license          'all_rights'
 description      'Installs/Configures slickdeals_library'
 long_description 'Installs/Configures slickdeals_library'
 version          '0.1.0'
-
