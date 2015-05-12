@@ -7,6 +7,22 @@ Tested on CentOS 6 and Ubuntu 14.04
 
 ## Helpers
 ### Slickdeals::IPHelper
+All of these functions use OHAI to get information.
+#### find_bound_ips(scope)
+Takes a scope like '172.16.0.0/12' and returns all ip's on the box that are within the scope
+
+#### all_private_bound_ips
+Returns all ip's on the box other than 127.0.0.1 that are within the official PRIVATE ip ranges
+10/8, 172.16/12 and 192.168/16
+
+#### all_bound_ips
+Returns all valid IPs that are seen by OHAI on the box
+
+#### find_bind_ip(scope)
+_LEGACY FUNCTION, do not use unless needed_
+
+Returns the __First__ IP on the box that is within the specified scope. __FIRST__ is defined by the first match in OHAI
+
 
 ### Slickdeals::Helper
 #### unique_number(max)
