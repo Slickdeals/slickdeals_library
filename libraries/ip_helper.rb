@@ -33,8 +33,11 @@ module Slickdeals
     def all_bound_ips
       ip_list = []
       node['network']['interfaces'].each do |_ifce, attrs|
-        next unless attrs['addresses'] # Not all interfaces have IPs
-        ip_list.concat(attrs['addresses'].map { |addr, _| addr })
+        next unless attrs['addresses'] #Not all interfaces have Addresses
+        attrs['addresses'].each do |addr, _|
+          ## Only take valid IPv4 and IPv6
+          ip_list.push(addr) if !(IPAddr.new(addr) rescue nil).nil?
+        end
       end
       ip_list
     end
