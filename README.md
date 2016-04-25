@@ -39,7 +39,7 @@ Chef::Recipe.send(:include, Slickdeals::HelperName)
 If you need to use this in a resource you would use;
 
 ```ruby
-Chef::Resource.ResourceName.send(:include, Slickdeals::HelperName)
+Chef::Resource.send(:include, Slickdeals::HelperName)
 ```
 
 ## Development
